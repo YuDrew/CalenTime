@@ -18,7 +18,6 @@ const styles = StyleSheet.create({
   },
   EventTitle: {
     fontWeight: 'bold',
-    fontSize: 30,
   },
 });
 
@@ -39,10 +38,10 @@ const EventTemplateFunction = () => {
   return(
     <View style={styles.centered}>
       <View style={{flexDirection: 'row'}}>
-        <View style={{flexDirection: 'column'}}>
+        <View style={{flexDirection: 'column', flex: 5}}>
           <View style={styles.spacedRow}>
             <Text style={styles.EventTitle}> Title of Event </Text>
-            <Text style={{alignSelf: 'flex-end'}}> 00:00:00 </Text>
+            <Text style={{alignSelf: 'flex-end'}}> Elapsed: 00:00:00 </Text>
           </View>
           <View style={styles.spacedRow}> 
             <Text> Start: 00:00 XM </Text> 
@@ -50,6 +49,7 @@ const EventTemplateFunction = () => {
           </View>
         </View>
         <Button
+          style={{flex: 1}}
           onPress={() => {
             setIsTracking(!isTracking);
           }}
