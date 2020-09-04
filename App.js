@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   Text,
   StyleSheet,
@@ -8,6 +8,8 @@ import {
   SectionList,
   ScrollView
 } from 'react-native';
+
+import moment from 'moment';
 
 const styles = StyleSheet.create({
   Event: {
@@ -28,13 +30,22 @@ const styles = StyleSheet.create({
   },
   sectionHeader: {
     fontSize: 16,
-    backgroundColor: "#fff"
+    backgroundColor: "#ADD8E6"
   },
   listHeader: {
     fontSize: 25,
-    backgroundColor: "#f0f"
+    backgroundColor: "#00FF00"
   },
 });
+
+const formatTime = number => `0${number}`.slice(-2);
+
+const getTimes = (time) => {
+  const hours = Math.floor(time/3600);
+  const mins = Math.floor((time - hours*3600)/60);
+  const secs = time % 60;
+  return {hours: formatTime(hours), mins: formatTime(mins), secs: formatTime(secs)};
+}
 
 const DATA = [
   {
@@ -44,11 +55,11 @@ const DATA = [
         summary: "Event One",
         description: "Stuff happens in event One",
         start: {
-          dateTime: new Date().getHours() + ":" + new Date().getMinutes(),
+          dateTime: moment().format("HH:mm"),
           timeZone: "CST"
         },
         end: {
-          dateTime: (new Date().getHours()+ 1) + ":" + new Date().getMinutes(),
+          dateTime:  formatTime((new Date().getHours()+1)) + ":" + formatTime(new Date().getMinutes()),
           timeZone: "CST"
         }
       },
@@ -56,11 +67,11 @@ const DATA = [
         summary: "Event Two",
         description: "Stuff happens in event Two",
         start: {
-          dateTime: (new Date().getHours()+3) + ":" + new Date().getMinutes(),
+          dateTime: formatTime((new Date().getHours()+3)) + ":" + formatTime(new Date().getMinutes()),
           timeZone: "CST"
         },
         end: {
-          dateTime: (new Date().getHours()+4) + ":" + new Date().getMinutes(),
+          dateTime: formatTime(new Date().getHours()+4) + ":" + formatTime(new Date().getMinutes()),
           timeZone: "CST"
         }
       }
@@ -77,6 +88,20 @@ const Event = ({summary, description, start, end}) => {
   const [isTracking, setIsTracking] = useState(false);
   //ToDo: Add in a Timer in order to update time elapsed regularly
   //ToDo: Add in a Time Elapsed state variable
+  const [secondsElapsed, setSecondsElapsed] = useState(0);
+  const { hours, mins, secs } = getTimes(secondsElapsed);
+
+  useEffect(() => {
+    let interval = null;
+    if (isTracking) {
+      interval = setInterval(() => {
+        setSecondsElapsed(secondsElapsed => secondsElapsed + 1);
+      }, 1000);
+    } else if (!isTracking && secondsElapsed !== 0) {
+      clearInterval(interval);
+    }
+    return () => clearInterval(interval);
+  }, [isTracking, secondsElapsed]);
 
   return(
     <View style={styles.Event}>
@@ -88,7 +113,7 @@ const Event = ({summary, description, start, end}) => {
           <View style={styles.spacedRow}> 
             <Text> Start: {start.dateTime} XM </Text> 
             <Text> End: {end.dateTime} XM </Text>
-            <Text style={{alignSelf: 'flex-end'}}> Elapsed: 00:00:00 </Text>
+            <Text style={{alignSelf: 'flex-end'}}> Elapsed: {hours}:{mins}:{secs} </Text>
           </View>
         </View>
         <Button
