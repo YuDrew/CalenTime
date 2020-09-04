@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/CalenTime.iml" filepath="$PROJECT_DIR$/.idea/modules/CalenTime.iml" group="CalenTime" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/app.iml" group="CalenTime/app" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/1995237204/react-native-firebase_app.iml" filepath="$PROJECT_DIR$/.idea/modules/1995237204/react-native-firebase_app.iml" group="CalenTime/react-native-firebase_app" />
+    </modules>
+  </component>
+</project>

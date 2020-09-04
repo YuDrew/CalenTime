@@ -1,0 +1,6 @@
+module Pods_CalenTime_CalenTimeTests {
+  umbrella header "Pods-CalenTime-CalenTimeTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

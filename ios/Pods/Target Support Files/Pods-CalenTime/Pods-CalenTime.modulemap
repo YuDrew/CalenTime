@@ -1,0 +1,6 @@
+module Pods_CalenTime {
+  umbrella header "Pods-CalenTime-umbrella.h"
+
+  export *
+  module * { export * }
+}
