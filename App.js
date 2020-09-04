@@ -3,7 +3,8 @@ import {
   Text,
   StyleSheet,
   View,
-  Button
+  Button,
+  SafeAreaView,
 } from 'react-native';
 
 const styles = StyleSheet.create({
@@ -16,8 +17,11 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between'
   },
-  EventTitle: {
+  eventTitle: {
     fontWeight: 'bold',
+  },
+  container: {
+    flex: 1,
   },
 });
 
@@ -40,7 +44,7 @@ const EventTemplateFunction = () => {
       <View style={{flexDirection: 'row'}}>
         <View style={{flexDirection: 'column', flex: 5}}>
           <View style={styles.spacedRow}>
-            <Text style={styles.EventTitle}> Title of Event </Text>
+            <Text style={styles.eventTitle}> Title of Event </Text>
             <Text style={{alignSelf: 'flex-end'}}> Elapsed: 00:00:00 </Text>
           </View>
           <View style={styles.spacedRow}> 
@@ -60,4 +64,12 @@ const EventTemplateFunction = () => {
   );
 }
 
-export default EventTemplateFunction;
+const App = () => {
+  return(
+    <SafeAreaView style={{flex: 1}}>
+      <EventTemplateFunction/>
+    </SafeAreaView>
+  );
+}
+
+export default App;
