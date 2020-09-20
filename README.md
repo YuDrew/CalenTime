@@ -18,3 +18,4 @@
 * Calendar Auth: https://developers.google.com/calendar/auth
 * Google OAuth: https://developers.google.com/identity/protocols/oauth2/
 * Moment (DateTime Parsing): https://momentjs.com/docs/
+* Google API for Javascript: https://github.com/google/google-api-javascript-client
