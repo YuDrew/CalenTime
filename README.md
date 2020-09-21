@@ -1,5 +1,5 @@
 # CalenTime
- Timetracking using the Google Calendar API and Firebase.
+ Timetracking using the Google Calendar API and Firebase. If you schedule your life out in Google Calendar, let's find out how much of that plan you actually follow...
 ## Current Functionality
 * Basic formatting.
 * Connected app to Firebase, though it's not used yet.
