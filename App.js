@@ -1,4 +1,7 @@
 import React, { useState, useEffect } from 'react';
+import 'react-native-gesture-handler';
+import { NavigationContainer, StackActions } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
 import {
   Text,
   StyleSheet,
@@ -8,8 +11,9 @@ import {
   SectionList,
   ScrollView
 } from 'react-native';
-
 import moment from 'moment';
+
+const Stack = createStackNavigator();
 
 const styles = StyleSheet.create({
   Event: {
@@ -83,7 +87,7 @@ const DATA = [
   }
 ]
 
-const Event = ({summary, description, start, end}) => {
+const Event = ({ navigation, summary, description, start, end}) => {
   //Declare state variables
   const [isTracking, setIsTracking] = useState(false);
   const [secondsElapsed, setSecondsElapsed] = useState(0);
@@ -121,6 +125,13 @@ const Event = ({summary, description, start, end}) => {
           }}
           title={isTracking ? "⏹" : "▶️"}
         />
+        <Button
+          style={{flex: 1}}
+          onPress={() => {
+            navigation.navigate('Event')
+          }}
+          title= '>'
+        />
       </View>
     </View>
   );
@@ -128,19 +139,48 @@ const Event = ({summary, description, start, end}) => {
 
 const App = () => {
   return(
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen
+          name = "Home"
+          component = {HomeScreen}
+          option={{ title: 'Welcome'}}
+        />
+        <Stack.Screen
+          name = "Event"
+          component = {EventScreen}
+        />
+      </Stack.Navigator>
+    </NavigationContainer>
+  );
+}
+
+const HomeScreen = ({ navigation }) => {
+  return(
     <SafeAreaView style={styles.container}>
-      <SectionList
-        ListHeaderComponent={() => <Text style={styles.listHeader}> Some Header </Text>}
-        sections= {DATA}
-        keyExtractor={(item, index) => item + index}
-        renderItem={({ item }) => 
-          <Event summary={item.summary} description={item.description} start={item.start} end={item.end} />
-        }
-        renderSectionHeader={({ section: { title } }) => (
-          <Text style={styles.sectionHeader}>{title}</Text> 
-        )}
-      />
-    </SafeAreaView>
+        <SectionList
+          ListHeaderComponent={() => <Text style={styles.listHeader}> Some Header </Text>}
+          sections= {DATA}
+          keyExtractor={(item, index) => item + index}
+          renderItem={({ item }) => 
+            <Event navigation={navigation} summary={item.summary} description={item.description} start={item.start} end={item.end} />
+          }
+          renderSectionHeader={({ section: { title } }) => (
+            <Text style={styles.sectionHeader}>{title}</Text> 
+          )}
+        />
+      </SafeAreaView>
+  );
+}
+
+const EventScreen = ({ navigation }) => {
+  return(
+    <Button
+      title="Back to home"
+      onPress={() =>
+        navigation.navigate('Home')
+      }
+    />
   );
 }
 

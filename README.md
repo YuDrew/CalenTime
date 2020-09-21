@@ -3,7 +3,8 @@
 ## Current Functionality
 * Basic formatting.
 * Connected app to Firebase, though it's not used yet.
-* Time elapsed is tracked and updates per second, though it doesn't save to firebase yet
+* Time elapsed is tracked and updates per second, though it doesn't save to Firebase yet
+* You can navigate between pages 🎉
 ## To-Dos
 * Break up components into separate files for readability
 * Set up Google Sign In and OAuth
@@ -18,4 +19,5 @@
 * Calendar Auth: https://developers.google.com/calendar/auth
 * Google OAuth: https://developers.google.com/identity/protocols/oauth2/
 * Moment (DateTime Parsing): https://momentjs.com/docs/
-* Google API for Javascript: https://github.com/google/google-api-javascript-client
+* Google API for Node: https://github.com/googleapis/google-api-nodejs-client
+* Everything Navigation: https://reactnavigation.org/docs/getting-started/
