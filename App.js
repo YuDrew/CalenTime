@@ -86,8 +86,6 @@ const DATA = [
 const Event = ({summary, description, start, end}) => {
   //Declare state variables
   const [isTracking, setIsTracking] = useState(false);
-  //ToDo: Add in a Timer in order to update time elapsed regularly
-  //ToDo: Add in a Time Elapsed state variable
   const [secondsElapsed, setSecondsElapsed] = useState(0);
   const { hours, mins, secs } = getTimes(secondsElapsed);
 
