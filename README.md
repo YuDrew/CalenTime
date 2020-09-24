@@ -5,8 +5,10 @@
 * Connected app to Firebase, though it's not used yet.
 * Time elapsed is tracked and updates per second, though it doesn't save to Firebase yet
 * You can navigate between pages 🎉
+## Other things I'm (unreasonably) proud of 😤
+* Components are separated and somewhat more navigable
+* Code is somewhat pretty
 ## Things to figure out 🔬
-* Break up components into separate files for readability
 * Set up Google Sign In and OAuth
 * Connect to Google Calendar API to populate event information (titles, start times, and end times)
 * Set up Firebase Realtime Database to track time elapsed

@@ -1,13 +1,13 @@
-import React, { useState, useEffect } from 'react';
+import React, {useState, useEffect} from 'react';
 import 'react-native-gesture-handler';
-import { NavigationContainer, StackActions } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
+import {NavigationContainer, StackActions} from '@react-navigation/native';
+import {createStackNavigator} from '@react-navigation/stack';
 import auth from '@react-native-firebase/auth';
-import { 
+import {
   GoogleSignin,
-  GoogleSigninButton
+  GoogleSigninButton,
 } from '@react-native-community/google-signin';
-import { EventDetailScreen, HomeScreen } from './src/screens'
+import {EventDetailScreen, HomeScreen} from './src/screens';
 /*
 //Google SignIn Setup
 GoogleSignin.configure({
@@ -78,20 +78,17 @@ const App = () => {
   }
 
   */
-  return(
+  return (
     <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen
-          name = "Home"
-          component = {HomeScreen}
-          option={{ title: 'Welcome'}}
+          name="Home"
+          component={HomeScreen}
+          option={{title: 'Welcome'}}
         />
-        <Stack.Screen
-          name = "Event"
-          component = {EventDetailScreen}
-        />
+        <Stack.Screen name="Event" component={EventDetailScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );
-}
+};
 export default App;
