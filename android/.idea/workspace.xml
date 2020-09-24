@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f2ca9109-e0cd-4f74-9fe2-a5be896ebf37" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../App.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ios/CalenTime.xcworkspace/xcuserdata/yudrew.xcuserdatad/UserInterfaceState.xcuserstate" beforeDir="false" afterPath="$PROJECT_DIR$/../ios/CalenTime.xcworkspace/xcuserdata/yudrew.xcuserdatad/UserInterfaceState.xcuserstate" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,7 +38,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="android.sdk.path" value="$USER_HOME$/Library/Android/sdk" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="memory.settings.postsync.last.time.stamp" value="1600716501318" />
+    <property name="memory.settings.postsync.last.time.stamp" value="1600908577772" />
     <property name="settings.editor.selected.configurable" value="AndroidSdkUpdater" />
   </component>
   <component name="RunManager">
@@ -113,10 +115,11 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state x="373" y="446" key="com.intellij.ide.util.TipDialog" timestamp="1600716500183">
-      <screen x="0" y="0" width="1920" height="1080" />
+    <state x="373" y="460" key="com.intellij.ide.util.TipDialog" timestamp="1600908576152">
+      <screen x="0" y="23" width="1920" height="1057" />
     </state>
     <state x="373" y="446" key="com.intellij.ide.util.TipDialog/-1440.132.1440.900/0.0.1920.1080/-3360.55.1920.1080@0.0.1920.1080" timestamp="1600716500183" />
+    <state x="373" y="460" key="com.intellij.ide.util.TipDialog/-1440.155.1440.877/0.23.1920.1057/-3360.78.1920.1057@0.23.1920.1057" timestamp="1600908576152" />
     <state x="210" y="792" key="com.intellij.ide.util.TipDialog/-1440.596.1440.900/0.0.1080.1920/-3360.519.1920.1080@0.0.1080.1920" timestamp="1599200145993" />
   </component>
 </project>

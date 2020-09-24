@@ -21,3 +21,6 @@
 * Moment (DateTime Parsing): https://momentjs.com/docs/
 * Google API for Node: https://github.com/googleapis/google-api-nodejs-client
 * Everything Navigation: https://reactnavigation.org/docs/getting-started/
+* Organizing the RN App: https://cheesecakelabs.com/blog/efficient-way-structure-react-native-projects/
+* Organizing Styles: https://thoughtbot.com/blog/structure-for-styling-in-react-native
+* How to export: https://medium.com/dailyjs/javascript-module-cheatsheet-7bd474f1d829
